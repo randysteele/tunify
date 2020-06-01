@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function getPlaylists(){
 fetch(BACKEND_URL)
 .then(response => response.json())
-.then(list  => {
-  list.data.forEach(playlist=> {
+.then(playlist  => {
+  playlists.data.forEach(playlist=> {
   const playlistMarkup = `
   <div data-id=${playlist.id}>
   <h4>${playlist.attributes.name}</h4
@@ -17,7 +17,7 @@ fetch(BACKEND_URL)
   <button data-id=${playlist.id}<edit</button>
   </div>
   <br><br>`
-  document.getElementById("new-playlist-container").innerHTML += playlistMarkup
+  document.querySelector("new-playlist-container").innerHTML += playlistMarkup
 })
 })
 }

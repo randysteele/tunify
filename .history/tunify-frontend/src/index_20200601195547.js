@@ -17,7 +17,7 @@ fetch(BACKEND_URL)
   <button data-id=${playlist.id}<edit</button>
   </div>
   <br><br>`
-  document.getElementById("new-playlist-container").innerHTML += playlistMarkup
+  document.querySelector("new-playlist-container").innerHTML += playlistMarkup
 })
 })
 }
