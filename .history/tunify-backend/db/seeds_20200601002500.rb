@@ -6,6 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-lady = Playlist.create(name: "Country")
-karaoke = Playlist.create(name: "karaoke")
-
+Playlist.create([(name: 'country', sngs: "lady")])

@@ -1,9 +1,9 @@
 class Api::V1::PlaylistController < ApplicationController
 
     def index 
-        @playlists = Playlist.all
+        playlists = Playlist.all
 
-        render json: @playlists
+        render json: PlaylistSerializer.new(playlists)
 
     end
 end
