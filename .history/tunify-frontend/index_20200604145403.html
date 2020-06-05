@@ -12,25 +12,15 @@
     <div class="form-container">
         <h3>Create a Playlist!</h3>
 
-        <form id="create-playlist-form" class="form" >
-          <input for="Playlist Name">Playlist Name</label>
-          <input type="text" name="Playlist Name" id="Playlist Name">
+        <form id="create-playlist-form" class="form" label="Playlist Name">
+          <!-- <input for="name">Playlist Name</label> -->
           <input for="song title">Song title</label>
-          <input type="text" name="Song Title" id="Song Title">
-          <button type="submit">Create Playlist</button>            
+  
+
+          <!-- <form  onsubmit="createFormHandler(event);return false"> -->
+            <input type="text"/>
+            <input type="submit"/>
           </form>
-
-          <script>
-          const createPlaylistForm  = document.getElementById("create-playlist-form");
-
-          createPlaylistForm.addEventListener("submit", (e) => {
-              e.preventDefault();
-              
-
-          });
-          
-        
-        </script>
   
           <p>Choose A song </p>
           <select id="songs" name="songs">
@@ -41,11 +31,9 @@
           <br><br>
   
           <!-- <input id= 'create-button' type="submit" name="submit" value="Create New Playlist" class="submit"> -->
-        
+        </form>
   
       </div>
-
-      
   
   <br><br>
   

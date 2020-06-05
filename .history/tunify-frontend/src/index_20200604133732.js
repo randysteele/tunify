@@ -5,13 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   getPlaylists();  
 
 
-  const createPlaylistForm  = document.getElementById("create-playlist-form");
+const createPlaylistForm = document.querySelector("#create-playlist-form")
 
-  createPlaylistForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      debugger
+createPlaylistForm.addEventListener("submit", (e) => createFormHandler(e))  
 
-  });
+})
 
 
 function getPlaylists(){
@@ -27,17 +25,19 @@ function getPlaylists(){
         <button data-id=${playlist.id}>edit</button>
         </div> 
         <br><br>`
-        
+        // debugger
      
         document.getElementById("playlist-container").innerHTML += playlistMarkup
       })
   })
 }
-  
+  function createFormHandler(event) {    
+    e.preventDefault()
+    console.log("yo");
 
-function createFormHandler(){
-  e.preventDefault()
-  const nameInput = document.getElementById('Playlist Name').value
-  const songTitle = document.getElementById('Song Title').value
-  
+
   }
+  
+// from line 14
+//  createPlaylistForm.addEventListener("submit", (event) => 
+//   createFormHandler(event))

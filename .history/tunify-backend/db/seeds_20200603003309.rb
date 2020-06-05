@@ -8,8 +8,6 @@
 
 Playlist.destroy_all
 Song.destroy_all
-
-
 karaoke = Playlist.create(name: "karaoke")
 lady = Playlist.create(name: "Country")
 

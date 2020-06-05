@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       debugger
 
   });
+  
+
 
 
 function getPlaylists(){
@@ -35,9 +37,5 @@ function getPlaylists(){
 }
   
 
-function createFormHandler(){
-  e.preventDefault()
-  const nameInput = document.getElementById('Playlist Name').value
-  const songTitle = document.getElementById('Song Title').value
+})
   
-  }

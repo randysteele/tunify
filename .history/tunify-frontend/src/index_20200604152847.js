@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   getPlaylists();  
 
 
-  const createPlaylistForm  = document.getElementById("create-playlist-form");
+// const createPlaylistForm = document.getElementById("create-playlist-form")
 
-  createPlaylistForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      debugger
+//  createPlaylistForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   console.log('Form Has Been Submitted!') 
+// });
 
-  });
 
 
 function getPlaylists(){
@@ -33,11 +33,10 @@ function getPlaylists(){
       })
   })
 }
+  // function createFormHandler(event) {    
+  //   event.preventDefault()
   
 
-function createFormHandler(){
-  e.preventDefault()
-  const nameInput = document.getElementById('Playlist Name').value
-  const songTitle = document.getElementById('Song Title').value
+
+})
   
-  }

@@ -2,17 +2,9 @@ const BACKEND_URL = 'http://localhost:3000/api/v1/playlists'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  getPlaylists();  
-
-
-  const createPlaylistForm  = document.getElementById("create-playlist-form");
-
-  createPlaylistForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      debugger
-
-  });
-
+  getPlaylists();
+  // getTitle();
+});
 
 function getPlaylists(){
   fetch(BACKEND_URL)
@@ -27,17 +19,24 @@ function getPlaylists(){
         <button data-id=${playlist.id}>edit</button>
         </div> 
         <br><br>`
-        
+        // debugger
      
-        document.getElementById("playlist-container").innerHTML += playlistMarkup
+        document.getElementById("new-playlist-container").innerHTML += playlistMarkup
       })
   })
-}
-  
+  function getTitle(){
+    fetch(BACKEND_URL)
+    .then(response => response.json())
+    .then(lists => {
+      lists.data.attributes.forEach(play => {
+        const withSongTitle = `
+        <p>${playlist.attributes.songs.title}</p>`
 
-function createFormHandler(){
-  e.preventDefault()
-  const nameInput = document.getElementById('Playlist Name').value
-  const songTitle = document.getElementById('Song Title').value
-  
+        document.getElementById("new-playlist-container").innerHTML += withSongTitle
+      })
+    })
   }
+}
+
+
+console.log("Tunify")

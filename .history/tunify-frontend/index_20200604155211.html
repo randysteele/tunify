@@ -13,9 +13,9 @@
         <h3>Create a Playlist!</h3>
 
         <form id="create-playlist-form" class="form" >
-          <input for="Playlist Name">Playlist Name</label>
+          <!-- <input for="Playlist Name">Playlist Name</label> -->
           <input type="text" name="Playlist Name" id="Playlist Name">
-          <input for="song title">Song title</label>
+          <!-- <input for="song title">Song title</label> -->
           <input type="text" name="Song Title" id="Song Title">
           <button type="submit">Create Playlist</button>            
           </form>
@@ -25,8 +25,7 @@
 
           createPlaylistForm.addEventListener("submit", (e) => {
               e.preventDefault();
-              
-
+              console.log('Form Has Been Submitted!')
           });
           
         

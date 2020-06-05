@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createPlaylistForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      debugger
-
+      console.log(e)
   });
+  
+
 
 
 function getPlaylists(){
@@ -33,11 +34,10 @@ function getPlaylists(){
       })
   })
 }
+  // function createFormHandler(event) {    
+  //   event.preventDefault()
   
 
-function createFormHandler(){
-  e.preventDefault()
-  const nameInput = document.getElementById('Playlist Name').value
-  const songTitle = document.getElementById('Song Title').value
+
+})
   
-  }
