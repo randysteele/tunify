@@ -26,7 +26,7 @@ function getPlaylists(){
         <img src="${playlist.attributes.image}"</img>  <br>
         Click here for a preview!<a href> <br> ${playlist.attributes.preview}</a>          
        
-        <button data-id=${playlist.id}>Click Here to Add This song To Your Playlist!</button>         
+               
         
         </div> 
         <br><br>`

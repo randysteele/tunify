@@ -26,7 +26,7 @@ function getPlaylists(){
         <img src="${playlist.attributes.image}"</img>  <br>
         Click here for a preview!<a href> <br> ${playlist.attributes.preview}</a>          
        
-        <button data-id=${playlist.id}>Click Here to Add This song To Your Playlist!</button>         
+        <button data-id=${playlist.id}>add</button>         
         
         </div> 
         <br><br>`
@@ -34,8 +34,7 @@ function getPlaylists(){
 
         const addButton = document.createElement("BUTTON")
         addButton.id = "addButton";
-        addButton.innerHTML = 'Add This Song To Your Playlist Here!'
-        document.body.appendChild(addButton);
+        addButton.innerHTML = 'Add This Song To Your Playlist Here! '
         
 
 
