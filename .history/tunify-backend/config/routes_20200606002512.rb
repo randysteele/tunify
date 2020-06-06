@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :playlist_tracks
       resources :tracks do
         collection do
-          get :top_country
+          get :top_100
           get :random
           get :search
         end

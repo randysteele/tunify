@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-  has_many :playlist_tracks
+    has_many :playlist_tracks
   has_many :playlists, through: :playlist_tracks
 
     RSpotify::Playlist.find("7bntwjdswpqhrnqr0gssydbd0", "3oybL4xdKqkPO0ObreSPDM").tracks
