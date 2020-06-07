@@ -39,12 +39,12 @@ function getPlaylists(){
 }
   
 
-function createFormHandler(){
-  e.preventDefault()
-  // const nameInput = document.getElementById("Playlist Name").value
-  // const trackTitle = document.getElementById("Track Title").value
+// function createFormHandler(){
+//   e.preventDefault()
+//   const nameInput = document.getElementById("Playlist Name").value
+//   const trackTitle = document.getElementById("Track Title").value
   
-}
+// }
 
 function postFetch(name, artist, image, preview, spotify_id) {
   console.log(name, artist, image, preview, spotify_id)

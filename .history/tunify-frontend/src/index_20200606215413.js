@@ -29,7 +29,17 @@ function getPlaylists(){
         
         </div> 
         <br><br>`
-         
+       
+
+        // const addButton = document.createElement("BUTTON")
+        // addButton.id = "addButton";
+        // addButton.innerHTML = 'Add This Song To Your Playlist Here!'
+        // document.body.appendChild(addButton);
+        
+
+
+        
+     
         document.getElementById("playlist-container").innerHTML += playlistMarkup
       })
   })
@@ -41,8 +51,8 @@ function getPlaylists(){
 
 function createFormHandler(){
   e.preventDefault()
-  // const nameInput = document.getElementById("Playlist Name").value
-  // const trackTitle = document.getElementById("Track Title").value
+  const nameInput = document.getElementById("Playlist Name").value
+  const trackTitle = document.getElementById("Track Title").value
   
 }
 
@@ -74,7 +84,23 @@ function postFetch(name, artist, image, preview, spotify_id) {
     document.getElementById('playlist-container').innerHTML = playlistMarkup
   })
 }
+
+
+
+
+// app.get('/login', function(req, res) {
+//   var scopes = 'user-read-private user-read-email';
+//   res.redirect('https://accounts.spotify.com/authorize' +
+//     '?response_type=code' +
+//     '&client_id=' + my_client_id +
+//     (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
+//     '&redirect_uri=' + encodeURIComponent(redirect_uri));
+//   });
   
 
   });
 
+//   <select id="tracks" name="tracks" multiple> 
+//   <option value="1">`${playlist.attributes.name}`</option>
+ 
+// </select>
