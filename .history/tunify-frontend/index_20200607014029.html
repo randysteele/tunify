@@ -30,14 +30,14 @@
         <form id="create-playlist-form" class="form" >
           <input id="input-name" type="text" name="name" value="" placeholder="Playlist Name">
           <input id="create-button" type ="submit" name="submit" value="Create Playlist">     
-                 
+          <input id="create-button" type ="submit" name="submit" value="Add Song To Playlist">        
           </form>
 
           <script>
     
             document.getElementById('create-playlist-form').addEventListener("submit", function(event){
               event.preventDefault();
-              
+              console.log(event)
             //   const inputName = document.getElementById('input-name').value
             //   postFetch(inputName)
 
@@ -48,7 +48,7 @@
     </script>
   
       <div id="playlist-container">
-        
+  
       </div>
     <script>
        

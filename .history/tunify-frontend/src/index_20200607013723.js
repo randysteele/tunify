@@ -19,19 +19,18 @@ function getPlaylists(){
   .then(list  => {
   list.data.forEach(playlist=> {
     const playlistMarkup =     `
-       
-       <select ${playlist.id}></select>
-       <h3>Title: ${playlist.attributes.name}</h3>
-       <input id="add-button" type ="submit" name="submit" value="Add ${playlist.attributes.name} To Playlist"> 
-       <h4> Artist: ${playlist.attributes.artist}</h4>     
+       <div data-id=${playlist.id}>
+        <h3>Title: ${playlist.attributes.name}</h3>
+        <h4> Artist: ${playlist.attributes.artist}</h4>     
         <img src="${playlist.attributes.image}"</img>  <br>
         Click here for a preview!<a href> <br> ${playlist.attributes.preview}</a>  
-               
-        <br>      
+        <checkbox>        
+       
+        <button data-id=${list.id}>Click Here to Add This song To Your Playlist!</button>         
         
         </div> 
         <br><br>`
-        
+         
         document.getElementById("playlist-container").innerHTML += playlistMarkup
       })
   })

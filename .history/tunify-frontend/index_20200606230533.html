@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+    
+  </head>
+  <body>
+
+
+    
+    <div class="form-container">
+        <h3>Create a Playlist!</h3>
+
+        <form id="create-playlist-form" class="form" >
+          <input id="input-name" type="text" name="name" value="" placeholder="Playlist Name"></label>      
+          <button type="submit">Create Playlist</button>            
+          </form>
+
+          
+       <script>
+
+        document.getElementById('create-playlist-form').addEventListener("submit", function(event){
+           event.preventDefault();
+           const inputName = document.getElementById('input-name').value
+        })
+    </script>
+        
+        
+        
+       
+  
+  
+  
+  
+      <div id="playlist-container">
+  
+      </div>
+  
+    
+
+    </div>
+    </body>
+    
+  </html>
+
+  

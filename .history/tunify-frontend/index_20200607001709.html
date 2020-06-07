@@ -8,20 +8,6 @@
   </head>
   <body>
 
-    <!-- <select>
-        <script > 
-        
-        for(var d=1;d<=31;d++)
-        {
-          document.write("<option >"+d+"</option >");
-        }
-        </script>
-        </select>
-
-
-        </script>
-        </select> -->
-
 
     
     <div class="form-container">
@@ -29,15 +15,14 @@
 
         <form id="create-playlist-form" class="form" >
           <input id="input-name" type="text" name="name" value="" placeholder="Playlist Name">
-          <input id="create-button" type ="submit" name="submit" value="Create Playlist">     
-                 
+          <input id="create-button" type ="submit" name="submit" value="Create Playlist">            
           </form>
 
           <script>
     
             document.getElementById('create-playlist-form').addEventListener("submit", function(event){
               event.preventDefault();
-              
+              console.log(event)
             //   const inputName = document.getElementById('input-name').value
             //   postFetch(inputName)
 
@@ -48,26 +33,25 @@
     </script>
   
       <div id="playlist-container">
-        
+  
       </div>
     <script>
-       
+        function addTracks(){
+            let playlist = getPlaylists
+            let trackOptions = "<option value-0><select</option>"
+            for (var i = playlist; i < playlist.tracks + 5; i++) {
+                playlist += "<option value =`"+i+"`>"+i+"</option"
+            }
+            document.getElementById('allTracks').innerHTML = trackOptions;
+
+        }
+
 
 
     </script>
-    
+    <select id="allTracks"></select>
 
     </div>
-
-    <form method = "post" action="url to script">
-        <label for="Track"></label>
-        <select id="selectBox"></select>
-
-
-        </select>
-
-
-    </form>
     </body>
     
   </html>

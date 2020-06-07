@@ -19,19 +19,17 @@ function getPlaylists(){
   .then(list  => {
   list.data.forEach(playlist=> {
     const playlistMarkup =     `
-       
-       <select ${playlist.id}></select>
-       <h3>Title: ${playlist.attributes.name}</h3>
-       <input id="add-button" type ="submit" name="submit" value="Add ${playlist.attributes.name} To Playlist"> 
-       <h4> Artist: ${playlist.attributes.artist}</h4>     
+       <div data-id=${playlist.id}>
+        <h3>Title: ${playlist.attributes.name}</h3>
+        <h4> Artist: ${playlist.attributes.artist}</h4>     
         <img src="${playlist.attributes.image}"</img>  <br>
-        Click here for a preview!<a href> <br> ${playlist.attributes.preview}</a>  
-               
-        <br>      
+        Click here for a preview!<a href> <br> ${playlist.attributes.preview}</a>          
+       
+        <button data-id=${playlist.id}>Click Here to Add This song To Your Playlist!</button>         
         
         </div> 
         <br><br>`
-        
+         
         document.getElementById("playlist-container").innerHTML += playlistMarkup
       })
   })
@@ -41,7 +39,14 @@ function getPlaylists(){
 }
   
 
-
+function createFormHandler(event){
+  document.getElementById('create-playlist-form').addEventListener("submit", function(event){
+    event.preventDefault();
+    const inputName = document.getElementById('input-name').value
+    postFetch(inputName)
+  
+})
+}
 
 function postFetch(name, artist, image, preview, spotify_id) {
   console.log(name, artist, image, preview, spotify_id)
@@ -70,10 +75,8 @@ function postFetch(name, artist, image, preview, spotify_id) {
     `
     document.getElementById('playlist-container').innerHTML = playlistMarkup
   })
-}  
-
-
-
+}
+  
 
   });
 

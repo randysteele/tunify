@@ -8,19 +8,15 @@
   </head>
   <body>
 
-    <!-- <select>
-        <script > 
+    <select>
+        <script language="javascript" type="text/javascript"> 
         
         for(var d=1;d<=31;d++)
         {
-          document.write("<option >"+d+"</option >");
+            document.write("<option>"+d+"</option>");
         }
         </script>
         </select>
-
-
-        </script>
-        </select> -->
 
 
     
@@ -29,15 +25,14 @@
 
         <form id="create-playlist-form" class="form" >
           <input id="input-name" type="text" name="name" value="" placeholder="Playlist Name">
-          <input id="create-button" type ="submit" name="submit" value="Create Playlist">     
-                 
+          <input id="create-button" type ="submit" name="submit" value="Create Playlist">            
           </form>
 
           <script>
     
             document.getElementById('create-playlist-form').addEventListener("submit", function(event){
               event.preventDefault();
-              
+              console.log(event)
             //   const inputName = document.getElementById('input-name').value
             //   postFetch(inputName)
 
@@ -48,10 +43,34 @@
     </script>
   
       <div id="playlist-container">
-        
+  
       </div>
     <script>
-       
+        // function addTracks(){
+        //     let playlist = getPlaylists();
+        //     let tracks = playlist.data.attributes.name
+        //     let trackOptions = "<option value='0'>select</option>"
+        //     for (var i = playlist; i < playlist.tracks + 5; i++) {
+        //         playlist += "<option value =`"+i+"`>"+i+"</option"
+        //     }
+        //     document.getElementById('allTracks').innerHTML = trackOptions;
+
+        // }
+
+//         (function() {
+//     let elm = document.getElementById('playlist-container')
+//     let  df = document.createDocumentFragment();
+//     for (var i = 1; i <= 42; i++) {
+//         let option = document.createElement('option');
+//         option.value = i;
+//         option.appendChild(document.createTextNode("option #" + i));
+//         df.appendChild(playlistMarkup);
+//     }
+//     elm.appendChild(df);
+// }());
+
+
+
 
 
     </script>
@@ -61,7 +80,7 @@
 
     <form method = "post" action="url to script">
         <label for="Track"></label>
-        <select id="selectBox"></select>
+        <select id="allTracks">
 
 
         </select>

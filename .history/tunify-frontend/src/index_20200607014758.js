@@ -19,11 +19,10 @@ function getPlaylists(){
   .then(list  => {
   list.data.forEach(playlist=> {
     const playlistMarkup =     `
-       
-       <select ${playlist.id}></select>
-       <h3>Title: ${playlist.attributes.name}</h3>
-       <input id="add-button" type ="submit" name="submit" value="Add ${playlist.attributes.name} To Playlist"> 
-       <h4> Artist: ${playlist.attributes.artist}</h4>     
+       <div data-id=${playlist.id}>
+        <h3>Title: ${playlist.attributes.name}</h3><br>
+        <input id="create-button" type ="submit" name="submit" value="Add ${"playlist.attributes.name"} To Playlist"> 
+        <h4> Artist: ${playlist.attributes.artist}</h4>     
         <img src="${playlist.attributes.image}"</img>  <br>
         Click here for a preview!<a href> <br> ${playlist.attributes.preview}</a>  
                
