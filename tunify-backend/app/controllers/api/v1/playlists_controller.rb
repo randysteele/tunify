@@ -2,21 +2,26 @@ class API::V1::PlaylistsController < ApplicationController
 
     def index
         @playlists = Playlist.all
-        render json: @playlists
-      end
-    
-      def show
-      end
+    #     options = {
+    #       include: [:tracks]
+    # }        
+    #    render json: PlaylistSerializer.new(@playlists, options)
+    render json: @playlists
+      end   
+      
     
       def create
         @playlist = Playlist.create(playlist_params)
-        binding.pry
         render json: @playlist
       end
 
       def update
         @playlist.update(playlist_params)
         render json: @playlist
+      end
+
+      def show 
+        @playlist = Playlist.find_by(params[:id])
       end
     
       def destroy
