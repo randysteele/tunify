@@ -42,46 +42,45 @@ function getPlaylists(){
   
 }
 
-function createFormHandler(e){
-  e.preventDefault()
+function createFormHandler(event){
+  event.preventDefault()
   const nameInput = document.getElementById("input-name").value
   const artist = document.getElementById("artist-name").value
   const image = document.getElementById("track-image").value
   const preview = document.getElementById("track-preview").value
-  const trackId = parseInt(document.getElementById("track-id").value)
-  postFetch(nameInput, artist, image, preview, trackId)
+
 }
   
 
 
 
 function postFetch(name, artist, image, preview, spotify_id) {
-  console.log()
-  // fetch(BACKEND_URL, {
-  //   method: "POST",
-  //   headers: {"Content-Type": "application/json"},
-  //   body: JSON.stringify({
-  //     name: name,
-  //     artist: artist,
-  //     image: image,
-  //     preview: preview,
-  //     spotify_id: spotify_id
-  //   })
-  // })
-  // .then(response => response.json())
-  // .then(playlist => {
-  //   console.log(playlist);
-  //   const playlistData = playlist.data
-  //   const playlistMarkup = `
-  //   <div data-id=${playlist.id}>
-  //   <h3>Title: ${playlistData.attributes.name}</h3>
-  //   <h4> Artist: ${playlistData.attributes.artist}</h4>     
-  //   <img src="${playlistData.attributes.image}"</img>
-  //   <button data-id=${playlistData.id}>EDIT!</button>  
-  //   </div>
-  //   `
-  //   document.getElementById('playlist-container').innerHTML = playlistMarkup
-  // })
+  console.log(name, artist, image, preview, spotify_id)
+  fetch(BACKEND_URL, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      name: name,
+      artist: artist,
+      image: image,
+      preview: preview,
+      spotify_id: spotify_id
+    })
+  })
+  .then(response => response.json())
+  .then(playlist => {
+    console.log(playlist);
+    const playlistData = playlist.data
+    const playlistMarkup = `
+    <div data-id=${playlist.id}>
+    <h3>Title: ${playlistData.attributes.name}</h3>
+    <h4> Artist: ${playlistData.attributes.artist}</h4>     
+    <img src="${playlistData.attributes.image}"</img>
+    <button data-id=${playlistData.id}>EDIT!</button>  
+    </div>
+    `
+    document.getElementById('playlist-container').innerHTML = playlistMarkup
+  })
 }  
 
 

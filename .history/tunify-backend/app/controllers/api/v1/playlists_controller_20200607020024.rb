@@ -10,7 +10,6 @@ class API::V1::PlaylistsController < ApplicationController
     
       def create
         @playlist = Playlist.create(playlist_params)
-        binding.pry
         render json: @playlist
       end
 

@@ -56,7 +56,7 @@ function createFormHandler(e){
 
 
 function postFetch(name, artist, image, preview, spotify_id) {
-  console.log()
+  console.log(name, artist, image, preview, spotify_id)
   // fetch(BACKEND_URL, {
   //   method: "POST",
   //   headers: {"Content-Type": "application/json"},
