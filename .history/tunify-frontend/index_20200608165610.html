@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+    
+  </head>
+  <body>
+
+    
+
+    
+    <div class="form-container">
+        <h3>Create a Playlist!</h3>
+
+        <form id="create-playlist-form" class="form" >
+          <input id="input-name" type="text" name="name" value="" placeholder="Playlist Name">
+          <!-- <input id="artist-name" type="text" name="artist-name" value="" placeholder="Artist Name">
+          <input id="track-image" type="text" name="track-image" value="" >
+          <input id="track-id" type="text" name="track-id" value="" >
+          <input id="track-preview" type="text" name="track-preview" value="" > -->
+        
+          <input id="create-button" type ="submit" name="submit" value="Create Playlist">     
+                 
+          </form>
+
+          <script>
+    
+            document.getElementById('create-playlist-form').addEventListener("submit", function(event){
+              event.preventDefault();
+              console.log(event)
+              
+            //   const inputName = document.getElementById('input-name').value
+            //   postFetch(inputName)
+
+            document.getElementById("add-song").appendChild`${playlist.attributes.name}`
+            
+          })
+          
+    </script>
+    
+      <div id="playlist-container">
+        <form>
+          <input id="add-button" type ="submit" name="submit" value="Add ${playlist.attributes.name} To Playlist"> 
+
+        </form>
+      </div>
+    
+       
+
+
+    </script>
+    
+
+    </div>
+
+    <form method = "post" action="url to script">
+        <label for="Track"></label>
+       
+
+
+    </form>
+    </body>
+    
+  </html>
+
+  
