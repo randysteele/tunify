@@ -7,24 +7,24 @@ class API::V1::PlaylistsController < ApplicationController
       end   
       
 
-      def top_country
-        s_playlists = RSpotify::Playlist.find("7bntwjdswpqhrnqr0gssydbd0", "3oybL4xdKqkPO0ObreSPDM").tracks
-        @playlists = s_playlists.map do |s_list|
-        Playlist.new_from_spotify_track(s_list)
-        # byebug
-        end    
+      # def top_country
+      #   s_playlists = RSpotify::Playlist.find("7bntwjdswpqhrnqr0gssydbd0", "3oybL4xdKqkPO0ObreSPDM").tracks
+      #   @playlists = s_playlists.map do |s_list|
+      #   Playlist.new_from_spotify_track(s_list)
+      #   # byebug
+      #   end    
                    
-        render json: PlaylistSerializer.new(@playlists)
-      end
+      #   render json: PlaylistSerializer.new(@playlists)
+      # end
 
-      def random
-        s_tracks = RSpotify::Playlist.browse_featured.first.tracks
-        @tracks = s_tracks.map do |s_track|
-        Playlist.new_from_spotify_track(s_track)
-        end
+      # def random
+      #   s_tracks = RSpotify::Playlist.browse_featured.first.tracks
+      #   @tracks = s_tracks.map do |s_track|
+      #   Playlist.new_from_spotify_track(s_track)
+      #   end
     
-        render json: @tracks
-      end
+      #   render json: @tracks
+      # end
 
     
       def create
@@ -38,15 +38,15 @@ class API::V1::PlaylistsController < ApplicationController
         # byebug
       end
 
-      def update
-        @playlist.update(playlist_params)
-        render json: @playlist
-      end
+      # def update
+      #   @playlist.update(playlist_params)
+      #   render json: @playlist
+      # end
 
-      def show 
-        @playlist = Playlist.find_by_id(params[:id])
-        render json: PlaylistSerializer.new(@playlist)
-      end
+      # def show 
+      #   @playlist = Playlist.find_by_id(params[:id])
+      #   render json: PlaylistSerializer.new(@playlist)
+      # end
     
       def destroy
         @playlist = Playlist.all

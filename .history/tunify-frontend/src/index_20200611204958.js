@@ -21,29 +21,26 @@ function getPlaylists() {
         <br><br>` 
 
         document.querySelector('#playlist-container').innerHTML += playlistMarkup
-
-      })
-    })  
-      
         
         // document.getElementById("playlist-container").innerHTML += playlistMarkup 
         // const addSong = document.getElementById("add-button.playlist.id")
         // addSong.addEventListener("click", (e) => createButtonHandler(e))
-      //   const createPlaylistForm  = document.getElementById("create-playlist-form");
-      //   createPlaylistForm.addEventListener("submit", (e) => createFormHandler(e)        
-      //    );
-            
-      // }
-      // function createFormHandler(e){
-      //   e.preventDefault()
-      //   let nameInput = document.getElementById("input-name").value  
-      //   postFetch(nameInput)
-      // }
-      // function createButtonHandler(e){
-      //   e.preventDefault()
-      //   let buttonClick = document.getElementById("add-button.playlist.id").value
-      //   postFetch()
-      // }
+        const createPlaylistForm  = document.getElementById("create-playlist-form");
+        createPlaylistForm.addEventListener("submit", (e) => createFormHandler(e)        
+         );
+        })
+        })         
+      }
+      function createFormHandler(e){
+        e.preventDefault()
+        let nameInput = document.getElementById("input-name").value  
+        postFetch(nameInput)
+      }
+      function createButtonHandler(e){
+        e.preventDefault()
+        let buttonClick = document.getElementById("add-button.playlist.id").value
+        postFetch()
+      }
 // function postFetch(name, artist, image, preview, playlist_id) {
 //    const bodyData = {name, artist, image, preview, playlist_id}
 //   fetch(BACKEND_URL, {
@@ -64,9 +61,9 @@ function getPlaylists() {
     // this is the event listener for create playlist. 
 //   })
 // }  
-// function newTrack(event){
-//   const playlistId = event.target.dataset.playlistId
-//   console.log('working?')
+function newTrack(event){
+  const playlistId = event.target.dataset.playlistId
+  console.log('working?')
   
 
   

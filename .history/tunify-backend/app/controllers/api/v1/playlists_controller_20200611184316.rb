@@ -3,7 +3,7 @@ class API::V1::PlaylistsController < ApplicationController
     def index
         @playlists = Playlist.all
    
-       render json: @playlists
+    render json: PlaylistSerializer.new(@playlists)
       end   
       
 
@@ -44,8 +44,7 @@ class API::V1::PlaylistsController < ApplicationController
       end
 
       def show 
-        @playlist = Playlist.find_by_id(params[:id])
-        render json: PlaylistSerializer.new(@playlist)
+        @playlist = Playlist.find_by(params[:id])
       end
     
       def destroy
@@ -57,7 +56,7 @@ class API::V1::PlaylistsController < ApplicationController
   
 
       def playlist_params
-        params.permit(:name, :artist, :image, :preview, :spotify_id)
+        params.require(:playlist).permit(:name, :artist, :image, :preview, :spotify_id)
       end
 
 # {"status":400,"error":"Bad Request","exception":"#\u003cActionController::ParameterMissing: param is missing or the value is empty: 
