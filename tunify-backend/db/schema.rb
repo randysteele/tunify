@@ -10,44 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_192320) do
+ActiveRecord::Schema.define(version: 2020_06_14_032424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "playlists", force: :cascade do |t|
-    t.string "songs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "track_id"
-    t.string "artist"
-    t.string "image"
-    t.string "preview"
-    t.string "spotify_id"
-  end
-
-  create_table "songs", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
-    t.integer "playlist_id"
-    t.string "artist"
-    t.string "image"
-    t.string "preview"
-    t.integer "spotify_id"
   end
 
   create_table "tracks", force: :cascade do |t|
     t.string "name"
     t.string "artist"
-    t.string "image"
-    t.string "preview"
-    t.string "spotify_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "playlist_id"
-    t.string "track_id"
+    t.bigint "playlist_id", null: false
+    t.index ["playlist_id"], name: "index_tracks_on_playlist_id"
   end
 
+  add_foreign_key "tracks", "playlists"
 end

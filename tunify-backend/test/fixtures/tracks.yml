@@ -3,13 +3,9 @@
 one:
   name: MyString
   artist: MyString
-  image: MyString
-  preview: MyString
-  spotify_id: MyString
+  playlist_id: 1
 
 two:
   name: MyString
   artist: MyString
-  image: MyString
-  preview: MyString
-  spotify_id: MyString
+  playlist_id: 1
