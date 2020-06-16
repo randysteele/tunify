@@ -21,17 +21,6 @@ function getPlaylists() {
       )}
   )
 }
-
-function render(playlist) {
-  const playlistMarkup =  `            
-         <div data-id=${playlist.id}>
-          <h3><li>Playlist Name: ${playlist.attributes.name}</h3></li>   
-          <h4><li>Track Title ${playlist.attributes.track.name}</h4></li>
-          <button data-id=${playlist.id}>EDIT!</button>    
-          </div> </li>
-          `;              
-          document.getElementById("playlist-container").innerHTML += playlistMarkup;
-  }
       //    <h3> Artist: ${playlist.attributes.track.artist}</h3>  
      
     function createFormHandler(e) {
@@ -59,8 +48,35 @@ function render(playlist) {
     .then(response => response.json())
     .then(playlist => {   
      const playlistData = playlist.data
-      render(playlistData)      
-    })  
+    
+      const playlistMarkup = `   
+      <div data-id=${playlist.id}>  
+      <h3>Playlist Name: ${playlist.name}</h3> 
+      <h3> Track: ${playlistData.attributes.track.name}</h3>  
+      <button data-id=${playlist.id}>EDIT!</button>
+      </div>`;
+      
+      document.getElementById("playlist-container").innerHTML += playlistMarkup;
+    })
+
+    function render(playlist) {
+      const playlistMarkup =  `            
+             <div data-id=${playlist.id}>
+              <h3><li>Playlist Name: ${playlist.attributes.name}</h3></li>   
+              <h4><li>Track Title ${playlist.attributes.track.name}</h4></li>
+              <button data-id=${playlist.id}>EDIT!</button>    
+              </div> </li>
+              `;              
+              document.getElementById("playlist-container").innerHTML += playlistMarkup;
+    }
+
+
+  //  const destroyPlaylist =(playlist_id) => {
+  //    fetch(`{BACKEND_URL}/${playlist_id}`, {
+  //      method: "DELETE"
+  //    })
+  //    .then(response => response.json())
+  //  }
     }
   
 

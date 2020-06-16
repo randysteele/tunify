@@ -59,8 +59,18 @@ function render(playlist) {
     .then(response => response.json())
     .then(playlist => {   
      const playlistData = playlist.data
-      render(playlistData)      
-    })  
+    
+      const playlistMarkup = `   
+      <div data-id=${playlist.id}>  
+      <h3>Playlist Name: ${playlist.name}</h3> 
+      <h3> Track: ${playlistData.attributes.track.name}</h3>  
+      <button data-id=${playlist.id}>EDIT!</button>
+      </div>`;
+      
+      document.getElementById("playlist-container").innerHTML += playlistMarkup;
+    })
+
+  
     }
   
 
