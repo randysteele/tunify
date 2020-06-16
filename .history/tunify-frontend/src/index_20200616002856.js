@@ -20,7 +20,7 @@ function getPlaylists() {
               <div data-id=${playlist.id}>
               <h3>Playlist Name: ${playlist.attributes.name}</h3>   
               <h3>Track Title ${playlist.attributes.track.name}</h3>
-              <button data-id=${playlist.id}>EDIT!</button>    
+                   
               </div> 
               `;              
               document.getElementById("playlist-container").innerHTML += playlistMarkup;
@@ -36,6 +36,7 @@ function getPlaylists() {
       // const artistInput = document.getElementById('artist-name').value     
       // const trackInput = document.getElementById('track').value
       const trackId = parseInt(document.getElementById('tracks').value)
+      destroyPlaylist
       postFetch(nameInput, trackId)      
     }
 
@@ -60,19 +61,18 @@ function getPlaylists() {
       <div data-id=${playlist.id}>  
       <h3>Playlist Name: ${playlist.name}</h3> 
       <h3> Track: ${playlistData.attributes.track.name}</h3>  
-      <button data-id=${playlist.id}>EDIT!</button>
       </div>`;
       
       document.getElementById("playlist-container").innerHTML += playlistMarkup;
     })
 
 
-  //  const destroyPlaylist =(playlist_id) => {
-  //    fetch(`{BACKEND_URL}/${playlist_id}`, {
-  //      method: "DELETE"
-  //    })
-  //    .then(response => response.json())
-  //  }
+   const destroyPlaylist =(playlist_id) => {
+     fetch(`{BACKEND_URL}/${playlist_id}`, {
+       method: "DELETE"
+     })
+     .then(response => response.json())
+   }
     }
   
 
