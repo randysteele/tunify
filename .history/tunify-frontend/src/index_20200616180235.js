@@ -38,10 +38,10 @@ function render(playlist) {
     function createFormHandler(e) {
       e.preventDefault()
       const nameInput = document.getElementById('input-name').value
-      // const artistInput = document.getElementById('artist-name').value     
+      const artistInput = document.getElementById('artist-name').value     
       // const trackInput = document.getElementById('track').value
       const trackId = parseInt(document.getElementById('tracks').value)
-      postFetch(nameInput, trackId)      
+      postFetch(nameInput, trackId, artistInput)      
     }
 
     function postFetch(name, track_id, artist){
