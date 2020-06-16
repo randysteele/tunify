@@ -26,8 +26,7 @@ function render(playlist) {
   const playlistMarkup =  `            
          <div data-id=${playlist.id}>
           <h3><li>Playlist Name: ${playlist.attributes.name}</h3></li>   
-          <h4><li>Track Title: ${playlist.attributes.track.name}</h4></li>
-          <h4><li>Track Artist: ${playlist.attributes.track.artist}</h4></li>
+          <h4><li>Track Title ${playlist.attributes.track.name}</h4></li>
           <button data-id=${playlist.id}>EDIT!</button>    
           </div> </li>
           `;              
@@ -45,6 +44,8 @@ function render(playlist) {
     }
 
     function postFetch(name, track_id, artist){
+      // const bodyData = {name, artist, track_id}
+
     fetch(BACKEND_URL, {
       method: "POST",
       headers: {"Content-Type": "application/json", "Accept": "application/json"},

@@ -45,6 +45,8 @@ function render(playlist) {
     }
 
     function postFetch(name, track_id, artist){
+      // const bodyData = {name, artist, track_id}
+
     fetch(BACKEND_URL, {
       method: "POST",
       headers: {"Content-Type": "application/json", "Accept": "application/json"},
