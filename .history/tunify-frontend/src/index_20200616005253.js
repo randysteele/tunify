@@ -18,8 +18,8 @@ function getPlaylists() {
           list.data.forEach(playlist =>  {
               const playlistMarkup =  `            
              <div data-id=${playlist.id}>
-              <h3><li>Playlist Name: ${playlist.attributes.name}</h3></li>   
-              <h4><li>Track Title ${playlist.attributes.track.name}</h4></li>
+              <h2><li>Playlist Name: ${playlist.attributes.name}</h2></li>   
+              <h3><li>Track Title ${playlist.attributes.track.name}</h3></li>
               <button data-id=${playlist.id}>EDIT!</button>    
               </div> </li>
               `;              
