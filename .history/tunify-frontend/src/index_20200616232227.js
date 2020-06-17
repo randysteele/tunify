@@ -15,9 +15,8 @@ function getPlaylists() {
   fetch(BACKEND_URL)
       .then(response => response.json())
       .then(list  => {
-          list.data.forEach(playlist =>  {                        
-           let newPlaylist = new Playlist(playlist, playlist.attributes)  
-
+          list.data.forEach(playlist =>  {            
+           let newPlaylist = new Playlist(playlist, playlist.attributes)    
           document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();
           }
       )}
@@ -27,9 +26,9 @@ function getPlaylists() {
     function createFormHandler(e) {
       e.preventDefault()
       const nameInput = document.getElementById('input-name').value
-      const artistInput = document.getElementById('artist-name').value     
+      // const artistInput = document.getElementById('artist-name').value     
       const trackId = parseInt(document.getElementById('tracks').value)
-      postFetch(nameInput, trackId, artistInput)      
+      postFetch(nameInput, trackId)      
     }
 
     function postFetch(name, track_id, artist){
@@ -43,14 +42,14 @@ function getPlaylists() {
       })      
     })    
     .then(response => response.json())
-    .then(playlist => {          
-      const playlistData = playlist.data;      
-      let newPlaylist = new Playlist(playlistData, playlistData.attributes) ;  
-     
-       
-     
-      document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard() ;
-   
+    .then(playlist => {      
+     const playlistData = playlist.data;   
+      let newPlaylist = new Playlist(playlistData, playlistData.attributes)  
+      document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();
     })  
-  }
+    }
+  
+
+    
+
 

@@ -15,10 +15,11 @@ function getPlaylists() {
   fetch(BACKEND_URL)
       .then(response => response.json())
       .then(list  => {
-          list.data.forEach(playlist =>  {                        
-           let newPlaylist = new Playlist(playlist, playlist.attributes)  
-
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();
+          list.data.forEach(playlist =>  { 
+                       
+           let newPlaylist = new Playlist(playlist, playlist.attributes)    
+           let trackMarkup = `<h3> ${playlist.attributes.track.name}</h3>;`
+          document.getElementById("playlist-container").innerHTML += trackMarkup += newPlaylist.renderPlaylistCard();
           }
       )}
   )
@@ -43,7 +44,8 @@ function getPlaylists() {
       })      
     })    
     .then(response => response.json())
-    .then(playlist => {          
+    .then(playlist => { 
+         
       const playlistData = playlist.data;      
       let newPlaylist = new Playlist(playlistData, playlistData.attributes) ;  
      
