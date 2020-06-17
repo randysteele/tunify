@@ -43,9 +43,9 @@ function getPlaylists() {
     })    
     .then(response => response.json())
     .then(playlist => {   
-      // console.log(playlist);
+      console.log(playlist);
      const playlistData = playlist.data;
-      // render(playlistData)   
+      render(playlistData)   
       let newPlaylist = new Playlist(playlistData, playlistData.attributes)   
 
 

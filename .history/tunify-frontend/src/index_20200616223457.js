@@ -15,9 +15,11 @@ function getPlaylists() {
   fetch(BACKEND_URL)
       .then(response => response.json())
       .then(list  => {
-          list.data.forEach(playlist =>  {            
+          list.data.forEach(playlist =>  {
+            // debugger
            let newPlaylist = new Playlist(playlist, playlist.attributes)    
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();
+          //  render(playlist)
+          document.getElementById("playlist-container").innerHTML += playlistMarkup;
           }
       )}
   )
@@ -42,14 +44,11 @@ function getPlaylists() {
       })      
     })    
     .then(response => response.json())
+    .catch(err => console.log(err))
     .then(playlist => {   
-      // console.log(playlist);
+      console.log(playlist);
      const playlistData = playlist.data;
-      // render(playlistData)   
-      let newPlaylist = new Playlist(playlistData, playlistData.attributes)   
-
-
-      document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();
+      render(playlistData)      
     })  
     }
   

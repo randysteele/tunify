@@ -27,7 +27,6 @@
 first = Track.create!(name: "First Song", artist: "Randy")
 second = Track.create!(name: "Second Song", artist: "Kristy")
 third = Track.create!(name: "third", artist: "Brady")
-country = Playlist.create!(name: "Country Songs", track_id: first.id)
 # hiphop = Track.create(name: "Hip Hop Horray")
 # country = Playlist.new(name: "Country Songs", track_id: hiphop.id)
 

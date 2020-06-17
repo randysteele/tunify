@@ -10,6 +10,7 @@ class Playlist {
 
 
       renderPlaylistCard() {
+        debugger
         return  `            
          <div data-id=${this.id}>
          <h3><li>Playlist Name: ${this.name}</h3></li>   

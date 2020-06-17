@@ -15,13 +15,27 @@ function getPlaylists() {
   fetch(BACKEND_URL)
       .then(response => response.json())
       .then(list  => {
-          list.data.forEach(playlist =>  {            
-           let newPlaylist = new Playlist(playlist, playlist.attributes)    
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();
+          list.data.forEach(playlistInfo =>  {
+           let newPlaylist = new Playlist(playlistInfo)    
+           render(playlist)
+           debugger
           }
       )}
   )
 }
+
+function render(playlist) {
+  const playlistMarkup =  `            
+         <div data-id=${playlist.id}>
+          <h3><li>Playlist Name: ${playlist.attributes.name}</h3></li>   
+          <h4><li>Track Title: ${playlist.attributes.track.name}</h4></li>
+          <h4><li>Track Artist: ${playlist.attributes.track.artist}</h4></li>
+          <button data-id=${playlist.id}>EDIT!</button>    
+          </div> </li>
+          `;              
+          document.getElementById("playlist-container").innerHTML += playlistMarkup;
+  }
+      //    <h3> Artist: ${playlist.attributes.track.artist}</h3>  
      
     function createFormHandler(e) {
       e.preventDefault()
@@ -42,14 +56,11 @@ function getPlaylists() {
       })      
     })    
     .then(response => response.json())
+    .catch(err => console.log(err))
     .then(playlist => {   
-      // console.log(playlist);
+      console.log(playlist);
      const playlistData = playlist.data;
-      // render(playlistData)   
-      let newPlaylist = new Playlist(playlistData, playlistData.attributes)   
-
-
-      document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();
+      render(playlistData)      
     })  
     }
   

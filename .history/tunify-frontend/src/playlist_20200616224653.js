@@ -5,11 +5,13 @@ class Playlist {
        this.name = playlistAttributes.name
        this.track = playlistAttributes.track
        this.artist = playlistAttributes.artist     
-       Playlist.all.push(this)      
+       Playlist.all.push(this)   
+      
   }
 
 
       renderPlaylistCard() {
+        debugger
         return  `            
          <div data-id=${this.id}>
          <h3><li>Playlist Name: ${this.name}</h3></li>   
