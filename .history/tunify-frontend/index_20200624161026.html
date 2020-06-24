@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type='text/javascript'>let playlistTracksTitle = playlist.attributes.tracks[i].title;</script>
+     <script type='text/javascript'> let playlistTracksArtist = playlist.attributes.tracks[i].artist;</script>
+    <script type="application/javascript" src="src/playlist.js" charset="UTF-8"></script>
+    <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+   
+  </head>
+  <body style="background-color: cyan;">
+
+    <!-- <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLRQDuF5jeBp" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+    
+    
+    <div id="playlist-container">
+    <h1> Current Playlists;</h1>
+    </li>
+    </div>
+    
+    <div class="form-container">
+      <h1>Create a Playlist!</h1>
+      <form id="create-playlist-form"  >
+        <input id="input-name" type="text" name="name" value="" placeholder="Playlist Name">
+        <!-- <input id="artist-input" type="text" name="name" value="" placeholder="Artist Name"> -->
+        <!-- <input id="tracks" type="text" name="name" value="" placeholder="Track Name"> -->
+        <!-- <input id="title-input" type="text" name="name" value="" placeholder="Track Title">   -->
+
+      </li>  
+          
+          <select id="tracks" name="tracks">
+            <option value="52">First</option>
+            <option value="48">Second</option>
+            <option value="49">Third</option> 
+            <option value="50">Fourth</option> 
+            <option value="51">Hip Hop Horray</option> 
+           
+            <!-- <input id="artist-name" type="text" name="name" value="" placeholder="Artist Name"> -->
+         <input id="create-button" type ="submit" name="submit" value="Create Playlist" class="submit"> 
+         
+        </form>
+      </div>
+      
+      
+  </html>
