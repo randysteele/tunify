@@ -1,0 +1,31 @@
+let withTracks = [playlist.attributes.tracks[i].title, playlist.attributes.tracks[i].artist]
+           withTracks.push(playlist.attributes.tracks[i].title, playlist.attributes.tracks[i].artist)
+class Playlist {
+ 
+  constructor(playlist, playlistAttributes) {  
+    
+     this.id = playlist.id
+     this.name = playlistAttributes.name  
+     //debugger  
+    //  this.artist = playlistAttributes.tracks[i].artist   
+    //  this.title = playlistAttributes.tracks[i].title    
+     Playlist.all.push(this);   
+     // debugger   
+}
+   
+
+renderPlaylistCard() {
+  return  `            
+   <div data-id=${this.id}>
+   <h3><li>Playlist Name: ${this.name}</h3></li> 
+   
+   <button data-id=${this.id}>EDIT!</button>    
+   </div> </li>
+   `
+      ;
+ }
+ 
+}  
+
+
+Playlist.all = [];
