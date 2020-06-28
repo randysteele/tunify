@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>   
+    <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+    <script type="application/javascript" src="src/playlist.js" charset="UTF-8"></script>
+    <script type="application/javascript" src="src/track.js" charset="UTF-8"></script>
+
+
+
+  </head>
+  <body style="background-color: cyan;">
+
+    <div class="form-container">
+      <h1>Create a Playlist!</h1>
+      <form id="create-playlist-form"  >
+        <input id="input-name" type="text" name="name" value="" placeholder="Playlist Name">
+        <input id="artist-value" type="text" name="name" value="" placeholder="Artist Name">
+        <!-- <input id="tracks" type="text" name="name" value="" placeholder="Track Name"> -->
+        <input id="title-value" type="text" name="name" value="" placeholder="Track Title">   
+          
+
+        <p> Choose Tracks! </p>
+          <select id="tracks" name="tracks" autofocus>
+            <option value="4">First</option>
+            <option value="5">Second</option>
+            <option value="1">Third</option> 
+            <option value="2">Fourth</option> 
+            <option value="3">Hip Hop Horray</option> 
+            </select>
+
+          </form>
+       <!-- <input id="artist-name" type="text" name="name" value="" placeholder="Artist Name"> -->
+         <input id="create-button" type ="submit" name="submit" value="Create Playlist" class="submit"> 
+         <div class="full-playlist">
+          <h1> Current Playlists;</h1>
+
+          <div id="playlist-container"></div>    
+        
+            <div id="tracks-container"> ALL TRACKS</div>
+  </div>
+      
+     </body> 
+  </html>
