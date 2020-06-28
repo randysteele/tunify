@@ -14,20 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
 function getPlaylists() {
   fetch(BACKEND_URL)
       .then(response => response.json())
-      .then(list  => {
-       list.data.map((playlist, index)  =>  {      
+      .then(playlist  => {
+       playlist.data.map((playlist, index)  =>  {      
           let newPlaylist = new Playlist(playlist, playlist.attributes);
 
-      // let playlistTracks =  playlist.attributes.tracks[index].title +=  playlist.attributes.tracks[index].artist 
-       
+      // playlist.attributes.tracks[index].title +=  playlist.attributes.tracks[index].artist 
+       console.log(playlist.attributes.name)
        console.log(playlist.attributes.tracks[index].title)
        console.log(playlist.attributes.tracks[index].artist)
+      
           
-          
-       document.getElementById('playlist-container').innerHTML += newPlaylist.renderPlaylistCard();  
          
+       document.getElementById('playlist-container').innerHTML += newPlaylist.renderPlaylistCard();  
+     // return playlist.attributes.tracks[index].title, playlist.attributes.tracks[index].artist
        //return playlist.attributes.tracks[index].title, playlist.attributes.tracks[index].artist
-        
+         //debugger
         })
        
         }
@@ -55,12 +56,12 @@ function getTracks() {
    
     function createFormHandler(e) {
       e.preventDefault()
-      const nameInput = document.getElementById('input-name').value
-      const playlistId = parseInt(document.getElementById('tracks').value)
+      const nameInput = document.getElementById('input-name').value      
       const titleValue = document.getElementById('title-value').value
       const artistValue = document.getElementById("artist-value").value
-      postFetch(nameInput, playlistId)   
-       postTrack(artistValue, titleValue) 
+      const playlistId = parseInt(document.getElementById('tracks').value)
+      postFetch(nameInput, playlistId, artistValue, titleValue)   
+      // postTrack(artistValue, titleValue) 
     }
 
     function postFetch(name, playlist_id){
@@ -78,25 +79,6 @@ function getTracks() {
       let newPlaylist = new Playlist(playlistData, playlistData.attributes);
     
       document.getElementById('tracks-container').innerHTML += newPlaylist.renderPlaylistCard() ;
-   
-    })  
-  }
-
-  function postTrack(title, artist){
-    fetch(tracks_URL, {
-      method: "POST",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify({
-        title: title,
-        artist: artist,
-      })      
-    })    
-    .then(response => response.json())
-    .then(track => {          
-      const trackData = track.data;      
-      let newTrack = new Track(trackData, trackData.attributes);
-    
-      document.getElementById('tracks-container').innerHTML += newTrack.renderTrackCard() ;
    
     })  
   }

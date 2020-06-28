@@ -14,20 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
 function getPlaylists() {
   fetch(BACKEND_URL)
       .then(response => response.json())
-      .then(list  => {
-       list.data.map((playlist, index)  =>  {      
+      .then(playlist  => {
+       playlist.data.map((playlist, index)  =>  {      
           let newPlaylist = new Playlist(playlist, playlist.attributes);
 
-      // let playlistTracks =  playlist.attributes.tracks[index].title +=  playlist.attributes.tracks[index].artist 
-       
-       console.log(playlist.attributes.tracks[index].title)
-       console.log(playlist.attributes.tracks[index].artist)
-          
-          
-       document.getElementById('playlist-container').innerHTML += newPlaylist.renderPlaylistCard();  
-         
-       //return playlist.attributes.tracks[index].title, playlist.attributes.tracks[index].artist
+      // playlist.attributes.tracks[index].title +=  playlist.attributes.tracks[index].artist 
+      //  console.log(playlist.attributes.name)
+      //  console.log(playlist.attributes.tracks[index].title)
+      //  console.log(playlist.attributes.tracks[index].artist)
+
+     // playlist.attributes.name, playlist.attributes.tracks[index].artist, playlist.attributes.tracks[index].title
         
+       document.getElementById('playlist-container').innerHTML += index += newPlaylist.renderPlaylistCard();  
+
+      // return playlist.attributes[index]
+        
+        
+         //debugger
         })
        
         }
@@ -42,11 +45,11 @@ function getTracks() {
           trk.data.forEach(track =>   { 
                       
           let newTrack = new Track(track, track.attributes);
-           let withTracks = []
-           withTracks.push(tracks.playlist_id)
+         //  let withTracks = []
+          // withTracks.push(tracks.playlist_id)
            //withTracks.push(tracks.attributes.artist. tracks.attributes.title )
           
-          document.getElementById('tracks-container').innerHTML += newTrack.renderTrackCard();   
+         document.getElementById('tracks-container').innerHTML += newTrack.renderTrackCard();   
         
           }
       )}
@@ -55,12 +58,12 @@ function getTracks() {
    
     function createFormHandler(e) {
       e.preventDefault()
-      const nameInput = document.getElementById('input-name').value
+      const nameInput = document.getElementById('input-name').value      
+      // const titleValue = document.getElementById('title-value').value
+      // const artistValue = document.getElementById("artist-value").value
       const playlistId = parseInt(document.getElementById('tracks').value)
-      const titleValue = document.getElementById('title-value').value
-      const artistValue = document.getElementById("artist-value").value
       postFetch(nameInput, playlistId)   
-       postTrack(artistValue, titleValue) 
+      // postTrack(artistValue, titleValue) 
     }
 
     function postFetch(name, playlist_id){
@@ -69,7 +72,9 @@ function getTracks() {
       headers: {"Content-Type": "application/json", "Accept": "application/json"},
       body: JSON.stringify({
         name: name,
-        playlist_id: playlist_id,
+        playlist_id: playlist_id
+        // artist: artist,
+        // title: title
       })      
     })    
     .then(response => response.json())
@@ -78,25 +83,6 @@ function getTracks() {
       let newPlaylist = new Playlist(playlistData, playlistData.attributes);
     
       document.getElementById('tracks-container').innerHTML += newPlaylist.renderPlaylistCard() ;
-   
-    })  
-  }
-
-  function postTrack(title, artist){
-    fetch(tracks_URL, {
-      method: "POST",
-      headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body: JSON.stringify({
-        title: title,
-        artist: artist,
-      })      
-    })    
-    .then(response => response.json())
-    .then(track => {          
-      const trackData = track.data;      
-      let newTrack = new Track(trackData, trackData.attributes);
-    
-      document.getElementById('tracks-container').innerHTML += newTrack.renderTrackCard() ;
    
     })  
   }
