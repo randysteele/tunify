@@ -1,0 +1,27 @@
+class Track {
+ 
+    constructor(track, trackAttributes) {  
+        this.id = track.id
+      //  this.playlist.id = trackAttributes.playlist_id
+        this.artist = trackAttributes.artist
+        this.title = trackAttributes.title
+       // this.name = trackAttributes.playlist.name
+        Track.all.push(this);
+       //  debugger
+       
+    }
+  
+    renderTrackCard() {
+        return  `  
+         <div data-id=${this.id}> 
+         <h3><li>Artist: ${this.artist}</h3></li>   
+         <h3><li>Title: ${this.title}</h3></li> 
+         <button data-id=${this.id}>EDIT!</button>                 
+         </div></div> </li>
+         `
+         ;            
+    } 
+    //  <div data=id=${this.playlist_id}> 
+}
+
+Track.all = [];
