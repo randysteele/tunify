@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createPlaylistForm.addEventListener("submit", (e) => createFormHandler(e))  
 })
 
- function getPlaylists() {
+ function getPlaylists(data) {
     fetch(BACKEND_URL)
         .then(response => response.json())
         .then(list  => {

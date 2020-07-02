@@ -1,9 +1,10 @@
 class Playlist {
  
-  constructor(playlist, playlistAttributes) {
-     this.id = playlist.id;
-     this.name = playlistAttributes.name;  
-     Playlist.all.push(this);
+  constructor(playlist, playlistAttributes) {    
+
+     this.id = playlist.id
+     this.name = playlistAttributes.name  
+     Playlist.all.push(this);  
    
 }
 

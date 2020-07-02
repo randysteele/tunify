@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createPlaylistForm.addEventListener("submit", (e) => createFormHandler(e))  
 })
 
- function getPlaylists() {
+ function getPlaylists(data) {
     fetch(BACKEND_URL)
         .then(response => response.json())
         .then(list  => {
@@ -35,6 +35,16 @@ function getTracks() {
                       
           let newTrack = new Track(track, track.attributes);
 
+         // let trackDetails = [track.attributes.title, track.attributes.artist, track.attributes.playlist.name]
+   
+          //  let i;
+          //  let t;
+          //  for (i = 0; i < track.attributes.length; i++) {
+          //   for (t = 0; t < track.attributes; t++ ) {
+          //     track.attributes[t].title, track.attributes[t].artist
+
+            // }}
+            // console.log(trackDetails)
           document.getElementById('tracks-container').innerHTML +=  newTrack.renderTrackCard();   
         
           }
@@ -44,12 +54,34 @@ function getTracks() {
    
     function createFormHandler(e) {
       e.preventDefault()
+     // const nameInput = parseInt(document.getElementById('input-name').value)
       const playlistId = document.getElementById('playlists').value
       const titleValue = document.getElementById('title-value').value
       const artistValue = document.getElementById("artist-value").value
+    //  postFetch(titleValue, artistValue, playlistId)   
       postTrack(artistValue, titleValue, playlistId) 
     }
 
+  //   function postFetch(title, artist){
+  //   fetch(BACKEND_URL, {
+  //     method: "POST",
+  //     headers: {"Content-Type": "application/json"},
+  //     body: JSON.stringify({
+  //       name: name,
+  //      // playlist_id: playlist_id,
+  //       title: title, 
+  //       artist: artist
+  //     })      
+  //   })    
+  //   .then(response => response.json())
+  //   .then(playlist => {          
+  //     const playlistData = playlist.data;      
+  //     let newPlaylist = new Playlist(playlistData, playlistData.attributes);
+    
+  //     document.getElementById('playlist-container').innerHTML += newPlaylist.renderPlaylistCard() ;
+   
+  //   })  
+  // }
 
   function postTrack(title, artist, playlist_id){
     fetch(tracks_URL, {
