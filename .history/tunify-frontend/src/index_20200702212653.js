@@ -32,16 +32,21 @@ function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
       .then(trk  => {
-          trk.data.map(track =>  {                       
+          trk.data.map(track =>   { 
+                      
           let newTrack = new Track(track, track.attributes);
 
-          document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
+          document.getElementById('tracks-container').innerHTML +=  newTrack.renderTrackCard(); 
+               
           }
       )}
   )
 }
 
-    
+
+users.sort(function(a,b){
+  return a.firstname.localeCompare(b.firstname);
+})
 
    
     function createFormHandler(e) {

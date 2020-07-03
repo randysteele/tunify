@@ -32,16 +32,20 @@ function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
       .then(trk  => {
-          trk.data.map(track =>  {                       
+          trk.data.map(track =>   { 
+                      
           let newTrack = new Track(track, track.attributes);
-
-          document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
+          track.sort(function(a, b){
+            if(a.track.playlist.name < b.track.playlist.name) { return -1; }
+            if(a.track.playlist.name > b.track.playlist.name) { return 1; }
+            return 0;
+          })
+          document.getElementById('tracks-container').innerHTML +=  newTrack.renderTrackCard();        
           }
       )}
   )
 }
 
-    
 
    
     function createFormHandler(e) {

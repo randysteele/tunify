@@ -11,6 +11,7 @@ class Playlist {
       return   `            
       <div data-id=${this.id}>
       <h4><li>Playlist Name: ${this.name}</h4></li>   
+      this.sort()
       </div> </li>
       `;  
   }

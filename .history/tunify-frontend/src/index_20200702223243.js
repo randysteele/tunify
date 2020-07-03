@@ -34,6 +34,8 @@ function getTracks() {
       .then(trk  => {
           trk.data.map(track =>  {                       
           let newTrack = new Track(track, track.attributes);
+          console.log(Object.defineProperties(newTrack))
+
 
           document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
           }

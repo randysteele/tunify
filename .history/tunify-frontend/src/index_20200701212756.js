@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
           list.data.forEach(playlist =>  {      
   
              let newPlaylist = new Playlist(playlist, playlist.attributes);  
-             
    
           document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard();   
              
@@ -32,17 +31,15 @@ function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
       .then(trk  => {
-          trk.data.map(track =>  {                       
+          trk.data.map(track =>   { 
+                      
           let newTrack = new Track(track, track.attributes);
 
-          document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
+          document.getElementById('tracks-container').innerHTML +=  newTrack.renderTrackCard();        
           }
       )}
   )
 }
-
-    
-
    
     function createFormHandler(e) {
       e.preventDefault()
@@ -72,5 +69,3 @@ function getTracks() {
    
     })  
   }
-
- 

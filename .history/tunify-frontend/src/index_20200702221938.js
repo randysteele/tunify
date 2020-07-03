@@ -32,16 +32,39 @@ function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
       .then(trk  => {
-          trk.data.map(track =>  {                       
+          trk.data.map(track =>   { 
+                      
           let newTrack = new Track(track, track.attributes);
-
           document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
           }
       )}
   )
 }
+// function sorting(){
+//   fetch(tracks_URL)
+//       .then(response => response.json())
+//       .then(track => {
+//         track.data.forEach(track => {
+//           let newTrack = new Track(track, track.attributes);
 
-    
+//        // trackData = new Track(track, track.attributes)
+//         newTrack.sort(function(a, b){return a.name - b.name});
+//         document.getElementById("tracks-container").innerHTML += newTrack.renderTrackCard();
+//       })}            
+//       )}
+
+function compare_name(a, b){
+  // a should come before b in the sorted order
+  if(a.playlist.name < b.playlist.name){
+          return -1;
+  // a should come after b in the sorted order
+  }else if(a.item > b.item){
+          return 1;
+  // and and b are the same
+  }else{
+          return 0;
+  }
+}
 
    
     function createFormHandler(e) {

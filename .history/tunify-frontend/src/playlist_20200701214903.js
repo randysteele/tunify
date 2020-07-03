@@ -12,7 +12,7 @@ class Playlist {
       <div data-id=${this.id}>
       <h4><li>Playlist Name: ${this.name}</h4></li>   
       </div> </li>
-      `;  
+      ` ;  
   }
 }  
 

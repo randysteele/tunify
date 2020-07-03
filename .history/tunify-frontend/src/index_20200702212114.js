@@ -32,17 +32,21 @@ function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
       .then(trk  => {
-          trk.data.map(track =>  {                       
+          trk.data.map(track =>   { 
+                      
           let newTrack = new Track(track, track.attributes);
 
-          document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
+          document.getElementById('tracks-container').innerHTML +=  newTrack.renderTrackCard();        
           }
       )}
   )
 }
 
-    
-
+playlist.sort(function(a, b){
+  if(a.playlist.name < b.playlist.name) { return -1; }
+  if(a.playlist.name > b.playlist.name) { return 1; }
+  return 0;
+})
    
     function createFormHandler(e) {
       e.preventDefault()
@@ -72,5 +76,3 @@ function getTracks() {
    
     })  
   }
-
- 

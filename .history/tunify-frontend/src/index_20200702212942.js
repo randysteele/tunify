@@ -32,16 +32,18 @@ function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
       .then(trk  => {
-          trk.data.map(track =>  {                       
+          trk.data.map(track =>   { 
+                      
           let newTrack = new Track(track, track.attributes);
-
-          document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
+          let sorted = [playlist.attributes]
+            sorted.sort(a,b)
+          document.getElementById('tracks-container').innerHTML +=  sorted += newTrack.renderTrackCard(); 
+               
           }
       )}
   )
 }
 
-    
 
    
     function createFormHandler(e) {

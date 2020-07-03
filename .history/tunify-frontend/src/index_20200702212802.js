@@ -32,16 +32,21 @@ function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
       .then(trk  => {
-          trk.data.map(track =>  {                       
+          trk.data.map(track =>   { 
+                      
           let newTrack = new Track(track, track.attributes);
 
-          document.getElementById('tracks-container').innerHTML  += newTrack.renderTrackCard(); 
+          document.getElementById('tracks-container').innerHTML +=  newTrack.renderTrackCard(); 
+               
           }
       )}
   )
 }
 
-    
+const playlist = playlist.attributes.tracks
+playlist.attributes.sort(function(a,b){
+  return a.playlist.name.localeCompare(b.playlist.name);
+})
 
    
     function createFormHandler(e) {

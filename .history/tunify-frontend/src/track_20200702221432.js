@@ -7,13 +7,14 @@ class Track {
         this.title = trackAttributes.title
         this.playlist = trackAttributes.playlist
         Track.all.push(this);
-    }
+        this.playlist.sort(function(a, b){return a.playlist - b.playlist});    }
+  
     renderTrackCard() {
         return  `  
          <div data-id=${this.id}>   
          <div data-id=${this.playlist_id}>  
          <h2><li>Playlist: ${this.playlist.name}</h2></li> 
-         <h3>Track: ${this.id}. ${this.title}</h3>
+         <h3><li>Title: ${this.title}</h3></li>
          <h3><li>By: ${this.artist}</h3></li>         
          </div></div> </li>
          `;
