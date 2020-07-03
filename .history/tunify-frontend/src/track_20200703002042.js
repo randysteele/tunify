@@ -13,8 +13,9 @@ class Track {
          <div data-id=${this.id}>   
          <div data-id=${this.playlist_id}>  
          <h2><li>Playlist: ${this.playlist.name}</h2></li> 
-         <h3>Track#: ${this.id}. <br> Title: ${this.title}</h3>
-         <h3><li>By: ${this.artist}</h3></li><br><br>   
+         <h3>Track: ${this.id}. ${this.title}</h3>
+         <h3><li>By: ${this.artist}</h3></li>   
+         <iframe src="https://open.spotify.com/embed/track/6urCAbunOQI4bLhmGpX7iS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
       
          </div></div> </li>
          `;

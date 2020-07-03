@@ -1,11 +1,8 @@
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  
   <head>
-
     <meta charset="utf-8">
-    <title>WELCOME TO TUNIFY</title>        
-      
+    <title></title>   
     <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/playlist.js" charset="UTF-8"></script>
     <script type="application/javascript" src="src/track.js" charset="UTF-8"></script>
@@ -13,15 +10,13 @@
 
 
   </head>
-
   <body style="background-color: cyan;">
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
     <div class="form-container">
       <h1>Create a Playlist!</h1>
       <form id="create-playlist-form"  >
-        <input id="artist-value" type="text" name="name" value="" placeholder="Track Title" >  
-        <br><br>
+        <input id="artist-value" type="text" name="name" value="" placeholder="Track Title"> 
         <input id="title-value" type="text" name="name" value="" placeholder="Artist Name">      
         <style>
           select {
@@ -29,7 +24,7 @@
               margin: 10px; 
                }
           </style>  
-          <form>
+          
             <p> Choose Playlist! </p>
            <select id="playlists" name="playlists" autofocus>
             
@@ -43,20 +38,10 @@
           </form>
             
           <div id="playlist-container"><h3>Here's A List Of Our Playlists;</h3> </div>
-
-        <yield>
-            <div id="tracks-container"> <h3>Playlist Details;</h3></div>
-
-           <div id="spotify-player"> <h4> Play your songs here! </h4>
-            <iframe src="https://open.spotify.com/embed/track/6urCAbunOQI4bLhmGpX7iS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
-            <iframe src="https://open.spotify.com/embed/track/3fqwjXwUGN6vbzIwvyFMhx" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
         
-            <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
-            <!-- Compiled and minified JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-          </yield>
-
-            </div>
+            <div id="tracks-container"> <h3>Playlist Details;</h3></div>
+            <iframe src="https://open.spotify.com/embed/track/6urCAbunOQI4bLhmGpX7iS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
+            <!-- <iframe src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLRQDuF5jeBp" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>  -->
  
      </body> 
   </html>

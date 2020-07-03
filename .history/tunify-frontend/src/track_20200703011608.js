@@ -13,7 +13,7 @@ class Track {
          <div data-id=${this.id}>   
          <div data-id=${this.playlist_id}>  
          <h2><li>Playlist: ${this.playlist.name}</h2></li> 
-         <h3>Track#: ${this.id}. <br> Title: ${this.title}</h3>
+         <h3>Track# ${this.id}. <br>${this.title}</h3>
          <h3><li>By: ${this.artist}</h3></li><br><br>   
       
          </div></div> </li>
