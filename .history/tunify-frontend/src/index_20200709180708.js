@@ -14,18 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(BACKEND_URL)
         .then(response => response.json())
         .then(list  => {  
+          let filters = [playlist.attributes.tracks]
+debugger
+/**
+ * Filter array items based on search criteria (query)
+ */
+function filterItems(arr, query) {
+  return arr.filter(function(el) {
+      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  })
+}
+
+console.log(filterItems(filters, 'son'))  // ['apple', 'grapes']
+console.log(filterItems(fruits, 'cou'))  // ['banana', 'mango', 'orange']
           list.data.forEach(playlist =>  { 
-          let newPlaylist = new Playlist(playlist, playlist.attributes, result); 
-          var filtList = [playlist.attributes]
-          var result = filtList.filter(function(elem) {
-          console.log( elem.id !== 1)
-          
-          });
-
-
-
+  
+          let newPlaylist = new Playlist(playlist, playlist.attributes); 
+           
+          // let songsWithF = playlist.filter(function (e){
+          //  return e.length === 3 })
+          //  console.log(songsWithF)
          
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
+          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard()  
 
 
         })             

@@ -9,32 +9,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const createPlaylistForm = document.getElementById("create-playlist-form")
   createPlaylistForm.addEventListener("submit", (e) => createFormHandler(e))  
 })
-  
+
  function getPlaylists() {
     fetch(BACKEND_URL)
         .then(response => response.json())
         .then(list  => {  
+     //     list.data.filter(playlist => playlist.tracks > 3)
+  
           list.data.forEach(playlist =>  { 
-          let newPlaylist = new Playlist(playlist, playlist.attributes, result); 
-          var filtList = [playlist.attributes]
-          var result = filtList.filter(function(elem) {
-          console.log( elem.id !== 1)
-          
-          });
-
-
-
+  
+          let newPlaylist = new Playlist(playlist, playlist.attributes); 
+           
+          // let songsWithF = playlist.filter(function (e){
+          //  return e.length === 3 })
+          //  console.log(songsWithF)
          
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
+          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard()  
 
 
         })             
         })                 
        }
 
+       function filteredPlaylists(getPlaylists){
+            let songsWithF = playlist.filter(function (e){
+            return e.length === 3 })
+            console.log(songsWithF)
 
 
-        
+       }
 
 
 function getTracks() {
@@ -89,8 +92,4 @@ function getTracks() {
       let newTrack = new Track(trackData, trackData.attributes);
       document.getElementById('playlist-container').innerHTML += newTrack.renderTrackCard();   
     })  
-
-  }
-      
-
- 
+ }

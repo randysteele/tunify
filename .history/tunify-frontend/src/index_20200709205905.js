@@ -15,17 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(list  => {  
           list.data.forEach(playlist =>  { 
-          let newPlaylist = new Playlist(playlist, playlist.attributes, result); 
-          var filtList = [playlist.attributes]
-          var result = filtList.filter(function(elem) {
-          console.log( elem.id !== 1)
-          
-          });
-
-
-
+    //  debugger
+    var vehicles = [
+      {name: "Audi", type: "Car"},
+      {name: "Mercedes", type: "Car"},
+      {name: "Ducati", type: "Bike"},
+      {name: "Harley Davidson", type: "Bike"},
+     ];
+     var carItems =  vehicles.filter(function(vehicle) {
+      return vehicle.type == "Car";
+     });
+     console.log(carItems);
+     // [ { name: 'Audi', type: 'Car' }, { name: 'Mercedes', type: 'Car' } ]           
+          // let songsWithF = playlist.filter(function (e){
+          //  return e.length === 3 })
+          //  console.log(songsWithF)
          
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
+          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard()  
 
 
         })             

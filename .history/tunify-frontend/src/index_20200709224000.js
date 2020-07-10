@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(list  => {  
           list.data.forEach(playlist =>  { 
+            var filtList = [playlist.attributes]
+            var result = filtList.filter(function(elem) {
+            return elem.name !== "Pop Songs" + document.getElementById("playlist-container")
+            
+            });
+ 
+        //  debugger
           let newPlaylist = new Playlist(playlist, playlist.attributes, result); 
-          var filtList = [playlist.attributes]
-          var result = filtList.filter(function(elem) {
-          console.log( elem.id !== 1)
-          
-          });
-
-
 
          
           document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 

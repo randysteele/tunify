@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
           let newPlaylist = new Playlist(playlist, playlist.attributes, result); 
           var filtList = [playlist.attributes]
           var result = filtList.filter(function(elem) {
-          console.log( elem.id !== 1)
+          console.log( elem.id !== 0)
           
           });
 

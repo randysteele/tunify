@@ -9,8 +9,6 @@ class Playlist extends Track {
      Playlist.all.push(this);    
 }
 
-
-      
 renderPlaylistCard() {
   let output = this.name + "";
 
@@ -21,12 +19,17 @@ renderPlaylistCard() {
       <h4><li>Artist: ${this.tracks[i].artist}</h4></li> 
     </div>`;
   }
-  return output;  
-  }
+  return output;
   
+  }
+      filtering(){
+      let details = [this.tracks]
+      const result = details.filter(details => details.length > 10);
+      return result
+
 }
 
-
+}
 
 Playlist.all = [];
 

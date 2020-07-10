@@ -9,8 +9,6 @@ class Playlist extends Track {
      Playlist.all.push(this);    
 }
 
-
-      
 renderPlaylistCard() {
   let output = this.name + "";
 
@@ -21,15 +19,29 @@ renderPlaylistCard() {
       <h4><li>Artist: ${this.tracks[i].artist}</h4></li> 
     </div>`;
   }
-  return output;  
+  return output;
   }
-  
 }
 
 
 
-Playlist.all = [];
+let stuff = this.tracks[0].artist
 
+/**
+ * Filter array items based on search criteria (query)
+ */
+function filterItems(arr, query) {
+  return arr.filter(function(el) {
+      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  })
+}
+
+console.log(filterItems(stuff, 'br'))  // ['apple', 'grapes']
+console.log(filterItems(stuff, 'kr'))  // ['banana', 'mango', 'orange']
+
+
+
+Playlist.all = [];
 
 // Get the app working so that as you display each playlist, you also display the associated tracks beneath
 // Remove the tracks-container because each track will be listed under its playlist

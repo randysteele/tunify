@@ -15,17 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(list  => {  
           list.data.forEach(playlist =>  { 
-          let newPlaylist = new Playlist(playlist, playlist.attributes, result); 
-          var filtList = [playlist.attributes]
-          var result = filtList.filter(function(elem) {
-          console.log( elem.id !== 1)
-          
-          });
-
-
-
+      debugger
+          let newPlaylist = new Playlist(playlist, playlist.attributes); 
+          let playlists = [playlist.attributes.name]
+          let filteredPlaylist = playlists.filter(function(name){
+            console.log(playlist.attributes.name === "Pop")
+          })
+           
+          // let songsWithF = playlist.filter(function (e){
+          //  return e.length === 3 })
+          //  console.log(songsWithF)
          
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
+          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard()  
 
 
         })             
