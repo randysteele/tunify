@@ -14,17 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(BACKEND_URL)
         .then(response => response.json())
         .then(list  => {  
-        //  console.log(list)
-        let results =  list.data.filter(elem => elem.attributes.name !== "Pop Songs")
-        console.log(results)
-          results.forEach(playlist =>  { 
+          list.data.forEach(playlist =>  { 
 
-          let newPlaylist = new Playlist(playlist, playlist.attributes); 
+          var newPlaylist = new Playlist(playlist, playlist.attributes); 
+          var filteredList = [playlist.attributes]
+       //   let result = filteredList.filter(function(elem){
+        var result = filteredList.filter(elem => elem.name !== "Pop Songs")
+      
+
          
-          let filteredList = [playlist.attributes]
-          let result = filteredList.filter(elem => elem.name !== "Pop Songs")
-       //   console.log(result)    
-          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
+         
+          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(result); 
           })
 
         })

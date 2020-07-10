@@ -7,6 +7,7 @@ class Playlist {
        // how would you instantiate a new track here using the Track class?
        return new Track(something, trackAttributes.name)
      })
+     console.log(this.tracks)
     // this.tracks should be an array of Track objects
      Playlist.all.push(this);    
 }
@@ -19,7 +20,8 @@ renderPlaylistCard() {
   for(let i=0; i < this.tracks.length; i++){
     output += `
     <div data-id=${this.id}>
-      ${this.tracks[i].renderTrackCard()}
+      <h4><li>Title: ${this.tracks[i].renderTrackCard()}</h4></li> 
+      <h4><li>Artist: ${this.tracks[i].artist}</h4></li> 
     </div>`;
   }
   return output;  

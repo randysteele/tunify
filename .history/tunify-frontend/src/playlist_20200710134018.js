@@ -1,6 +1,7 @@
 class Playlist {
  
   constructor(track, trackAttributes) {
+    console.log(trackAttributes)
      this.id = track.id;
      this.name = trackAttributes.name;  
      this.tracks = trackAttributes.tracks.map(something => {

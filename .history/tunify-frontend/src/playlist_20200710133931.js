@@ -1,6 +1,7 @@
 class Playlist {
  
   constructor(track, trackAttributes) {
+    console.log(trackAttributes)
      this.id = track.id;
      this.name = trackAttributes.name;  
      this.tracks = trackAttributes.tracks.map(something => {
@@ -19,7 +20,8 @@ renderPlaylistCard() {
   for(let i=0; i < this.tracks.length; i++){
     output += `
     <div data-id=${this.id}>
-      ${this.tracks[i].renderTrackCard()}
+      <h4><li>Title: ${this.tracks[i].renderTrackCard()}</h4></li> 
+      <h4><li>Artist: ${this.tracks[i].artist}</h4></li> 
     </div>`;
   }
   return output;  

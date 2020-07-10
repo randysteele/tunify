@@ -4,7 +4,7 @@ class Track {
      this.id = track.id
      this.artist = track.artist
      this.title = track.title
-     this.playlist = playlistName
+     this.playlist = track.playlistName
      Track.all.push(this);
      //   debugger
     }

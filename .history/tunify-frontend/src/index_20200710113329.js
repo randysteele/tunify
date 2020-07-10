@@ -14,21 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(BACKEND_URL)
         .then(response => response.json())
         .then(list  => {  
-        //  console.log(list)
-        let results =  list.data.filter(elem => elem.attributes.name !== "Pop Songs")
-        console.log(results)
-          results.forEach(playlist =>  { 
+          list.data.forEach(playlist =>  { 
 
           let newPlaylist = new Playlist(playlist, playlist.attributes); 
-         
           let filteredList = [playlist.attributes]
-          let result = filteredList.filter(elem => elem.name !== "Pop Songs")
-       //   console.log(result)    
+       //   let result = filteredList.filter(function(elem){
+        var result = filteredList.filter(elem => elem.name !== "Pop Songs")
+        return result
+         
+         
           document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
-          })
 
         })
-        }             
+        })             
+        }                
       
         
 

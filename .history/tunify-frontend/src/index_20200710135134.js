@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //  console.log(list)
         let results =  list.data.filter(elem => elem.attributes.name !== "Pop Songs")
         console.log(results)
-          results.forEach(playlist =>  { 
+          list.data.forEach(playlist =>  { 
 
           let newPlaylist = new Playlist(playlist, playlist.attributes); 
          

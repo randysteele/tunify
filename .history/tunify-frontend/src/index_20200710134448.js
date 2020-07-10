@@ -14,10 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(BACKEND_URL)
         .then(response => response.json())
         .then(list  => {  
-        //  console.log(list)
-        let results =  list.data.filter(elem => elem.attributes.name !== "Pop Songs")
-        console.log(results)
-          results.forEach(playlist =>  { 
+          console.log(list)
+          list.data.forEach(playlist =>  { 
 
           let newPlaylist = new Playlist(playlist, playlist.attributes); 
          
