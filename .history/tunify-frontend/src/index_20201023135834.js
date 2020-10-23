@@ -10,24 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
   createPlaylistForm.addEventListener("submit", (e) => createFormHandler(e))  
 })
   
-function getPlaylists() {
-  fetch(BACKEND_URL)
-      .then(response => response.json())
-      .then(list  => {  
-        list.data.forEach(playlist =>  { 
-        let newPlaylist = new Playlist(playlist, playlist.attributes, result); 
-        var filtList = [playlist.attributes]
-        var result = filtList.filter(function(elem) {
-        console.log( elem.id !== 1)
-        
-        });
+ function getPlaylists() {
+    fetch(BACKEND_URL)
+        .then(response => response.json())
+        .then(list  => {  
+        //  console.log(list)
+        // let results =  list.data.filter(elem => elem.attributes.name !== "Pop Songs")
+        // console.log(results)
+          // results.forEach(playlist =>  { 
 
-        document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
+          let newPlaylist = new Playlist(playlist, playlist.attributes); 
+         
+          let filteredList = [playlist.attributes]
+          let result = filteredList.filter(elem => elem.name !== "Pop Songs")
+       //   console.log(result)    
+          document.getElementById("playlist-container").innerHTML += newPlaylist.renderPlaylistCard(); 
+          })
 
-      })             
-    })                 
-   }
+        })
+        }             
       
+        
+
+
 function getTracks() {
   fetch(tracks_URL)
       .then(response => response.json())
